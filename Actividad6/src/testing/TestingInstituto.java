@@ -38,8 +38,8 @@ public class TestingInstituto {
 		System.out.println("Prueba del método buscarTodas" + "\n");
 		
 //Procedemos a probar el método buscarTodas()
-		System.out.println(miInstituto.buscarTodas());
-		System.out.println("Prueba método buscarPersonaPorTipo");
+		for(Persona ele: miInstituto.buscarTodas())
+			System.out.println(ele);;
 		
 		System.out.println("Prueba del método eliminarPersona" + "\n");
 		
