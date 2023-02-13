@@ -13,7 +13,6 @@ public class TestingInstituto {
 
 		InstitutoDao miInstituto = new InstitutoDaoImplList();
 		
-		
 		Persona p3 = new Alumno("58203698K", "Paz Zuñiga", "C/ Santo Tomás, 74", "684123655", "2º de Bachillerato");
 		Persona p4 = new Profesor("70256987L", "Alberto Rodríguez", "C/ General Díaz Porlier, 58", "658471230", "Inglés");
 		Persona p5 = new Alumno("551248779T", "Víctor Fontán", "C/ Santo Tomás, 55", "658963221", "1º de Bachillerato");
@@ -33,8 +32,8 @@ public class TestingInstituto {
 //Procedemos a probar el método buscarPersona por el nif
 		
 		System.out.println("Datos de la persona con NIF 516632211R: " + miInstituto.buscarPersona("516632211R") + "\n");
-		System.out.println("Datos de la persona con NIF 58203698K: " +miInstituto.buscarPersona("58203698K") + "\n");
-		System.out.println("Datos de la persona con NIF 70256987L: " +miInstituto.buscarPersona("70256987L") + "\n");
+		System.out.println("Datos de la persona con NIF 58203698K: " + miInstituto.buscarPersona("58203698K") + "\n");
+		System.out.println("Datos de la persona con NIF 70256987L: " + miInstituto.buscarPersona("70256987L") + "\n");
 		
 		System.out.println("Prueba del método buscarTodas" + "\n");
 		
@@ -49,7 +48,7 @@ public class TestingInstituto {
 		miInstituto.eliminarPersona(p5);
 //Ahora hacemos un syso de miInstituto, para comprobar que se haya eliminado la persona p5		
 		
-		System.out.println(miInstituto);
+		System.out.println(miInstituto+"\n");
 		
 		System.out.println("Prueba del método buscarPersonasPorTipo con la clase Profesor");
 		

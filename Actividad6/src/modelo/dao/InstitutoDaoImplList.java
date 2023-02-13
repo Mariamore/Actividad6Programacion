@@ -17,9 +17,8 @@ public class InstitutoDaoImplList implements InstitutoDao{
 	public String toString() {
 		return "InstitutoDaoImplList [personas=" + personas + "]";
 	}
-//Cargamos datos, para que el ArrayList personas tenga contenido y poder hacer pruebas
+//Generamos el constructor, con el método cargarDatos(), para que el ArrayList personas tenga contenido y poder hacer pruebas
 	public InstitutoDaoImplList() {
-		super();
 		personas = new ArrayList<>();
 		cargarDatos();
 	}
@@ -86,35 +85,33 @@ public class InstitutoDaoImplList implements InstitutoDao{
 	@Override
 	public List<Persona> buscarPersonasPorTipo(String tipoPersona) {
 		List<Persona> lista = new ArrayList<>();
-		if (tipoPersona.toLowerCase().equals("profesor")) {
-			for (Persona ele: personas) {
-				if (ele instanceof Profesor) {
-					System.out.println(((Profesor)ele).ponerNotas());
-					lista.add(ele);
-				}
-				
+		String tipoPersonaLowerCase = tipoPersona.toLowerCase();
+		for (Persona ele: personas) {
+			switch (tipoPersonaLowerCase) {
+			 case "profesor":
+				 if (ele instanceof Profesor) {
+						System.out.println(((Profesor)ele).ponerNotas());
+						lista.add(ele);
+					}
+				 break;
+			 case "alumno":
+				 if (ele instanceof Alumno) {
+						System.out.println(((Alumno)ele).hacerExamen());
+						lista.add(ele);
+					}
+				 break;
+			 case "administrativo":
+				 if (ele instanceof Administrativo) {
+						System.out.println(((Administrativo)ele).gestionarMatricula());
+						lista.add(ele);
+				 }
+				 break;
+			 default:
+				 System.out.println("No encontrado");
 			}
-		}
-		else if (tipoPersona.toLowerCase().equals("alumno")) {
-			for (Persona ele: personas) {
-				if (ele instanceof Alumno) {
-					System.out.println(((Alumno)ele).hacerExamen());
-					lista.add(ele);
-				}
-				
-			}
-		}
 		
-		else if (tipoPersona.toLowerCase().equals("administrativo")) {
-			for (Persona ele: personas) {
-				if (ele instanceof Administrativo) {
-					System.out.println(((Administrativo)ele).gestionarMatricula());
-					lista.add(ele);
-				}
-				
-			}
 		}
 		return lista;
 	}
-}
+}	
 
